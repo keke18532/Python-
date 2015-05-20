@@ -1,0 +1,80 @@
+print('Question1:')
+MAX=10
+a=[0]*MAX
+a[0],a[1],a[2]=-1,2,5
+print(str(a[0])+' '+str(a[1])+' '+str(a[2]),end=" ")
+for i in range(4,len(a)):
+    a[i]=int(a[i-3]+a[i-2]+a[i-1]/2)
+    print(a[i],end=" ")
+print('\nQuestion2:\nMatrix Addition')
+a = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+b = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+c = [[0,0,0],
+        [0,0,0],
+        [0,0,0]]
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        c[i][j] = a[i][j] + b[i][j]
+print(c)
+print('Matrix Subtraction:')
+a = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+b = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+c = [[0,0,0],
+        [0,0,0],
+        [0,0,0]]
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        c[i][j] = a[i][j] - b[i][j]
+print(c)
+print('Matrix Multiplication:')
+a = [[1,2,3],
+     [4,5,6]]
+b = [[2,3,4],
+     [5,6,7],
+     [8,9,10]]
+c = [[0,0,0],
+     [0,0,0]]
+for i in range(len(a)):
+    for j in range(len(b)):
+        for x in range(len(b)):
+            c[i][j]+=a[i][x]*b[x][j]
+print(c)    
+print('Question3:')
+cal={'January':31,'February':28,'March':31,'April':30,'May':31,'June':30,'July':31,'August':31,'September':30,'October':31,'November':30,'December':31}
+for key in cal.keys():
+    if(cal.get(key)==30):
+        print(key)
+print('Question4:')
+text=input('Type some text: ')
+words=text.split()
+dic={}
+for word in words:
+    count=dic.get(word)
+    if count==None:
+        dic.update({word:1})
+    else:
+        dic.update({word:count+1})
+print(dic)
+print('Question5:')
+text=input('Please type some text: ')
+words=text.split()
+s=set()
+for item in words:
+    if item not in s:
+        s.add(item)
+print(s)
+
+
+
+
+
+
+
