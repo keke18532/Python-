@@ -1,0 +1,54 @@
+print('question 1:')
+'''
+A program in which you define a function, which receives a list of values
+x0, x1, x2,...xn and calculates the value of y in the following formula:
+y=∑sin2(xn) -log(xn,3)+1/pow(xn,5), for n=0,1,2,...
+'''
+import math
+def q1(li):
+    y=0
+    for i in li:
+        y+=(math.sin(i))**2 -(math.log(i,3))+1/pow(i,5)
+    print(y)
+q1([5,63,100])
+
+print('question 2:')
+'''
+A program, which finds and displays the total price of all products from the following text.
+The price for each product is calculated by multiplying the amount of the product by its unit price:
+name=Milk;amount=200;unit_price=0.9\nname=Bread;amount=134;unit_price=3.48\nname=Butter;amount=58;unit_price=1.65\nname=Cheese;amount=260;unit_price=4.35
+'''
+text="name=Milk;amount=200;unit_price=0.9\nname=Bread;amount=134;unit_price=3.48\nname=Butter;amount=58;unit_price=1.65\nname=Cheese;amount=260;unit_price=4.35"
+word=text.split('\n')
+totalprice=0
+for item in word:
+    pdetail=item.split(';')
+    amount=pdetail[1].split('=')[1]
+    unit_price=pdetail[2].split('=')[1]
+    totalprice+=eval(amount)*eval(unit_price)
+    #print('amount='+amount+' unit_price='+unit_price+' totalprice='+str(totalprice))
+print('total price is '+str(totalprice))
+
+print('question 3:')
+'''
+A program in which you define a function for encrypting texts so that
+it receives a text and converts 'flower' to 'garlic' and prints out the resulting text.
+'''
+text=input('Please input a sentence which includes flower:\n')
+text1=text.replace('flower','garlic')
+print(text1)
+
+print('question 4:')
+'''
+A program, which finds all the indexes of word 'flower' in the following text: "A flower is a beautiful plant,
+which can be planted in the garden or used to decorate home.
+One might like a flower for its colors and the other might like a flower for its smell. A flower typically symbolizes soft feelings".
+'''
+text='A flower is a beautiful plant, which can be planted in the garden or used to decorate home. One might like a flower for its colors and the other might like a flower for its smell. A flower typically symbolizes soft feelings'
+i=0
+while i<len(text):
+    i=text.find('flower',i)
+    if(i==-1):
+        break
+    print(i)
+    i+=6
