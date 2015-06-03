@@ -1,0 +1,21 @@
+print('question 1:')
+import turtle
+s=turtle.Screen()
+s.setup(width=.75, height=0.5, startx=50, starty=50)
+def f():
+    t=turtle.Turtle()
+    t.shape("circle")
+    t.color("white", "red")
+    #t.begin_fill()
+    s.delay(100)
+    for z in range(10):
+        x=50.0*z
+        y=-5.0*(z**2)
+        t.goto(x,y)
+    #t.end_fill()
+def q():
+    s.clearscreen()
+s.onkey(f, 'f')
+s.onkey(q, 'q')
+s.listen()
+turtle.done()
