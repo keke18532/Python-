@@ -1,0 +1,6 @@
+a="{:<15}{:^10}{:>5}"
+print(a.format('Name','Unitprice','Amount'))
+print(a.format('Apple',1.98,150))
+print(a.format('Orange',0.99,250))
+print(a.format('Peach',1.99,180))
+print(a.format('Passion',3.45,235))
