@@ -1,3 +1,6 @@
+'''
+A program which generates randomly a number of date and time values and displays them in Finnish language.
+'''
 import random
 import time
 import re
