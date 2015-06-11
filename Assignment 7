@@ -1,0 +1,61 @@
+'''
+1.A program, which uses recursion to calculate the sum of values between n and m, where n and m can be any integer number.
+2.A program which uses recursion to calculate the sum of n values of this series: 1/5, 1/8, 1/11,...,1/(3n+2).
+3.A program, which uses recursion to find all indexes of a substring (substr) in a string (str).
+4.A program which uses lambda operator and map() function to convert each value x in this list: [25,39,52,68,20,89] to a new value y according to these conditions: if x<50, y=0 if 50<x<=75, y=2, if x>75, y=3.
+5.A program which uses filter() to filter out values less than 50 in this list: [25,39,52,68,20,89].
+6.A program, which uses reduce() function to calculate the greatest value in this list:  [25,39,52,68,20,89].
+'''
+def q1():
+    n=input('Please type a value for n:')
+    m=input('Please type a value for m:')
+    a=0;b=0;s=0;c=abs(eval(n)-eval(m))
+    if eval(n)>eval(m):
+        a=eval(m)
+    else:
+        a=eval(n)
+    for i in range(1,c):
+        b=a+i
+        s+=b
+    print(s)
+def q2():
+    a=2;s=0
+    for i in range(10):
+        a+=3*i
+        b=1/a
+        s+=b
+    print(s)
+def q3():
+    string='Hello world!'
+    for i in range(len(string)):
+        print('The index of',string[i],'is: ',i)
+def q4():
+    li=[25,39,52,68,20,89]
+    s=lambda x: 0 if x < 50 else 2 if x > 50 and x<=75 else 3 if x>=75 else None
+    print(list(map(s,li)))
+def q5():
+    li=[25,39,52,68,20,89]
+    s=lambda x:x<50
+    print(list(filter(s,li)))
+def q6():
+    import functools
+    li=[25,39,52,68,20,89]
+    s=lambda x,y:x if x>y else y
+    print(functools.reduce(s,li))
+
+text=input('Please give the sequence number of question you want to test:')
+a=eval(text)
+if a==1:
+    q1()
+elif a==2:
+    q2()
+elif a==3:
+    q3()
+elif a==4:
+    q4()
+elif a==5:
+    q5()
+elif a==6:
+    q6()
+else:
+    print('The question number shouble be between 1 and 6.')
