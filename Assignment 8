@@ -1,0 +1,65 @@
+'''
+1. A program in which you define a class called Project, which has the following attributes: name, budget, start date and end date. Define the constructor an the following methods for the class:
+
+getInfo(), which returns the object information as text,
+
+search(), which receives a name as argument and then compares the given name with the name of the project and returns either the project information or informs that the project with given name was not found.
+
+update(), which receives the name and budget as arguments and updates the project budget if the given name and the name of the project are the same.
+
+Define some objects of the class Project and call the methods to test that the methods are working correctly.
+
+2. Add to class Project a new method compare(), which receives an object of class Project as an argument and checks whether the attributes of the calling object and the given object are equal and returns the result of comparison as text. Define a list of objects of class Project and use a loop to go through the list and compare them with each other. 
+'''
+from sys import exit
+class Project(object):
+    def __init__(self, name, budget, startDate, endDate):
+        self.name = name
+        self.budget = budget
+        self.startDate = startDate
+        self.endDate = endDate
+    def getInfo(self):
+        print('name:%s budget:%s start date:%s end date:%s'%(p.name,p.budget,p.startDate,p.endDate))        
+    def search(self,name):
+        if name==p.name:
+            print('This name matches and the product information is:')
+            print('name:%s budget:%s start date:%s end date:%s'%(p.name,p.budget,p.startDate,p.endDate))
+        else:
+            print('The project with given name was not found.')
+    def update(self,name,budget):
+        if name==p.name:
+            p.budget=budget
+            print('The budget is updated to %s'%(p.budget))
+    def compare(self,object):
+        if object.name==p.name and object.budget==p.budget and object.startDate==p.startDate and object.endDate==p.endDate:
+            print('This object matches.')
+        else:
+            print('This object does not match.')
+while True:
+    text=input('Please type 1 to test question 1.\n2 to test question 2.\n3 to exit.\n')
+    a=eval(text)
+    if a==1:
+        p=Project('e','b','c','d')
+        p.getInfo()
+        p.search('e')
+        p.update('e','11')
+    elif a==2:
+        p=Project('e','b','c','d')
+        p1=Project('a','b','c','d')
+        p2=Project('b','b','c','d')
+        p3=Project('c','b','c','d')
+        p4=Project('c','b','c','d')
+        li=[p1,p2,p3,p4]
+        for x in range(len(li)):
+            for y in range(len(li)):
+                p=li[x]
+                if x!=y:
+                    #print(x,y)
+                    print('product%d and product%d:'%(x+1,y+1))
+                    #print(p.name,'and',li[y].name,':')
+                    p.compare(li[y])
+    elif a==3:
+        exit(0)
+    else:
+        print('This text is not accepted.')
+
