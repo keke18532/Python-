@@ -1,3 +1,14 @@
+'''
+Instructions
+Solve the following problems and submit your solutions before the deadline.
+Problems
+Write the following programs in Python language:
+
+A program which allows the user to write and read product data from a file. The program should ask the user to enter product data (name, unit price and amount) and write the data of each product to a separate line so that details are separated By semicolon(;). For the search part the application should ask the user to enter the criteria (name, unit price or amount) and search the product with the criteria equal to the given value.
+A program which returns th number of products and calculates the total value of each product (amount*unit price) and the sum of total values of each product.
+Improve your program for problem 2 so that you catch possible exceptions and print a user-friendly message both to the screen and to a log file.
+Improve your program for problem 1 so that if negative numbers are given as the amount or unit price the program will raise an Arithmetic exception.
+'''
 from sys import exit
 import json
 #To execute the program successfully,firstly you have to write a product data to the database by choose the *write option.
