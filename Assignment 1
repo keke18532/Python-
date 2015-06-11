@@ -1,3 +1,11 @@
+'''
+1.A program which prints out the sum of odd numbers belonging to the interval [1, 249].
+2.A program which prints out values belonging to the  following series:  
+1 1 2 3 5 8 13 21 ...
+1 1 2 4 7 13 24 44 ...
+1 3 4 6 14 9 37 12 ...
+3.A program which prints all prime numbers smaller than 10000. 
+'''
 print('Question1:')
 start=1
 end=249
