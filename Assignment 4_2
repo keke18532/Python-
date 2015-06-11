@@ -1,4 +1,6 @@
-#question 2:
+'''
+A program which draws a human face with eyebrows, eyes, nose and mouth.
+'''
 import turtle
 s=turtle.Screen()
 #set screen size
