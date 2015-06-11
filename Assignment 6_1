@@ -1,0 +1,7 @@
+'''
+A program which finds and displays all words, whcih end with 'y' in th efollowing text: 
+"The sky may be sunny or cloudy, but still you should try to do your best to achieve your tiny joy.".
+'''
+import re
+text="The sky may be sunny or cloudy, but still you should try to do your best to achieve your tiny joy."
+print([word for word in re.split('\W', text) if word.endswith('y')])
