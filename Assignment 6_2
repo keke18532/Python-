@@ -1,0 +1,52 @@
+'''
+A program, in you use regular expresions to split the following text and find and display the total price of all products from the following text. 
+The price for each product is calculated by multiplying the amount of the product by its unit price:   
+name=Milk;amount=200;unit_price=0.9\nname=Bread;amount=134;unit_price=3.48\nname=Butter;amount=58;unit_price=1.65\nname=Cheese;amount=260;unit_price=4.35
+'''
+import re
+text='name=Milk;amount=200;unit_price=0.9\nname=Bread;amount=134;unit_price=3.48\nname=Butter;amount=58;unit_price=1.65\nname=Cheese;amount=260;unit_price=4.35'
+a=[];b=[];d=0;t=0
+for word in re.split('[^0-9]{2}',text):
+    if word!='':
+        a.append(word)
+for x in a:
+    b.append(re.sub('=','',x))
+for i in range(len(b)):
+    if(i%2==0):
+        d=eval(b[i])*eval(b[i+1])
+        t+=d
+print(t)
+
+'''
+import re
+text='name=Milk;amount=200;unit_price=0.9\nname=Bread;amount=134;unit_price=3.48\nname=Butter;amount=58;unit_price=1.65\nname=Cheese;amount=260;unit_price=4.35'
+s=re.split('[^0-9]{2}',text)
+a=[];b=[];d=0;t=0
+for word in s:
+    if word!='':
+        a.append(word)
+for x in a:
+    c=re.sub('=','',x)
+    b.append(c)
+print(b)
+for i in range(len(b)):
+    if(i%2==0):
+        d=eval(b[i])*eval(b[i+1])
+        t+=d
+print(t)
+'''
+'''
+import re
+text='name=Milk;amount=200;unit_price=0.9\nname=Bread;amount=134;unit_price=3.48\nname=Butter;amount=58;unit_price=1.65\nname=Cheese;amount=260;unit_price=4.35'
+s=re.split('\n',text)
+c=[]
+for x in range(len(s)):
+    a=re.split(';',s[x])
+    #print(a)
+    for y in range(len(a)):
+        b=re.split('=',a[y])
+        #print(b)
+        for z in range(len(b)):
+            c.append(b[1])
+print(c)
+'''
