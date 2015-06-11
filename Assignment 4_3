@@ -1,4 +1,6 @@
-#question 3:
+'''
+A program, which draws a human face with falling tear drops.
+'''
 import turtle
 s=turtle.Screen()
 #set screen size
