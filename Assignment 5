@@ -1,0 +1,71 @@
+from sys import exit
+import json
+#To execute the program successfully,firstly you have to write a product data to the database by choose the *write option.
+class Product(object):
+    def __init__(self):
+        self.name = ""
+        self.unitprice = ""
+        self.amount = ""
+        self.product = {}
+        self.product1={}
+
+    def writing(self):
+        f = open('c:/TEMP/memo.txt', 'r+')
+        f.truncate()
+        self.product1={}
+        if(eval(p.unitprice)<0 or eval(p.amount)<0):
+            print('The amount and unitprice should be positive numbers.')
+        else:
+            self.product[p.name] = p.unitprice, p.amount
+            self.product1.update(self.product)
+            json.dump(self.product1, open('c:/TEMP/memo.txt','a'))
+            print(self.product1)
+
+    def reading(self):
+        s = open('c:/TEMP/memo.txt', 'r').read()
+        self.product = eval(s)
+        print(self.product)
+        name = input("Please type the product name,unit price or amount to search:\n")
+        for k in self.product:
+            if name in self.product:
+                print(name,self.product[name])
+            else:
+                for v in self.product[k]:
+                    if name in self.product[k]:
+                        print(k,self.product[k])
+                    else:
+                        print('This product information is not in the file.')
+
+    def calculating(self):
+        s = open('c:/TEMP/memo.txt', 'r').read()
+        self.product = eval(s)
+        li=[]
+        s=0
+        for k in self.product:
+            for v in self.product[k]:
+                li.append(v)
+        for i in range(len(li)):
+            if(i%2==0):
+                a=eval(li[i])*eval(li[i+1])
+                s+=a
+        x=len(li)/2
+        print('There are '+str(x)+' products in total.\n',
+              'The total price of the products are '+str(s)+'.')
+p = Product()      
+
+while True:
+    print("Please type:\n\t*read to search for the data base\n\t*write to write to the data base\n\t*calc to calculate\n\t*exit to exit")
+    action = input("\n> ")
+    if "write" in action:
+        p.name = input("Please type a product name:\n> ")
+        p.unitprice = input("Please type the unit price of the product:\n> ")
+        p.amount = input("Please type the amount of the product:\n> ")
+        p.writing()
+    elif "read" in action:
+        p.reading()
+    elif "calc" in action:
+        p.calculating()
+    elif "exit" in action:
+        exit(0)
+    
+    
