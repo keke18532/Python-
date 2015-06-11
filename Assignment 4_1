@@ -1,3 +1,21 @@
+'''
+Write the following programs in Python language:
+
+A program which asks the user to enter a command like f for fire and q for quit and if the user enter f it shoots a ball and shows how it drops down gradually.
+A program which draws a human face with eyebrows, eyes, nose and mouth.
+A program, which draws a human face with falling tear drops.
+A program which generates randomly a number of date and time values and displays them in Finnish language.
+A program which displays the following list so that name values have 15 places and are left aligned, unit prices have 10 places and are center aligned and amount values have 5 places and are right aligned.  
+Name             Unit Price        Amount
+
+Apple             1.98                150
+
+Orange           0.99                250
+
+Peach             1.99                180
+
+Passion          3.45                235
+'''
 print('question 1:')
 import turtle
 s=turtle.Screen()
