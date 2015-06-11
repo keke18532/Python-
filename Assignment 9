@@ -1,0 +1,57 @@
+'''
+A program in which you implement a poker game. In the program define a class called Player, whose instance variables are: name and stake (decimal number). Define also the following methods for the class:
+
+The constructor method
+The method which returns the object data as text.
+The play() method, which asks whether the user wants to paly or not. If the user wants to play, then it generates a random number between 1 and 13 and adds it to variable points.  
+Define also class Game, whose instance variable is two or more Player objects and its class variable is game_status, which is a dictionary, so that its key is the name of each player and its value is the collected points of the relevant player. Define also the following methods for the class:
+
+The constructor method
+The method which returns the object data as text.
+The start() method, which asks the user how many players want to play and then for each player it should generate an instance of class Player and then keep on calling the play() method of each player in order to generate a new random number for each player in turn. The program should continue until it finds the winner. The winner will be the player whose sum of generated random numbers (cards) is equal to 21 or bigger but still less than 21.
+In the main program you should create an instance of class Game and call its methods to start the game and print the results of the game.
+'''
+import random
+from sys import exit
+class Player():
+    def __init__(self,name,points):
+        self.name=name
+        self.points=points
+    def text(self):
+        print('name is:',self.name,'points is:',self.points)
+    def play(self):
+        text=input('Do you want to play this game?\nIf yes then press y,or press n:\n')
+        if text=='n':
+            exit(0)
+        elif text=='y':
+            num=random.randrange(1,13)
+            self.points+=num
+            print(self.points)
+        else:
+            text=input('This text is not accepted.')
+p=Player('a',1)
+class Game():
+    game_status={}
+    def __init__(self):
+        pass
+    def text(self):
+        print(type(self).game_status)
+    def start(self):
+        self.player=[]
+        numr=eval(input('How many players want to play?'))
+        for i in range(numr):
+            self.player.append(Player('player' + str(i),i))
+            type(self).game_status.update({self.player[i].name:self.player[i].points})
+            #print(type(self).game_status)
+            while True:
+                for x in self.player:
+                    x.play()
+                    a=x.points
+                    #print(a)
+                    if a>=21:
+                        print(x.name,'wins')
+                        exit(0)
+if __name__ == '__main__':
+    g = Game()
+    g.start()
+
