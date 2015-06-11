@@ -1,3 +1,10 @@
+'''
+1.A program which uses a list and prints out the  following series: a1=-1 a2=2 a3=5 an=an-3+an-2+an-1/2...
+2.A program which prints out the addition, subtraction and multiplication of two matrices.
+3.A program which uses a dictionary to save month names and the number of their days and prints out the names of  months which have 30 days.
+4.A program which asks the user to enter some text and then goes through the text and puts each word and the number of its occurrence to a dictionary and then prints out the content of the dictionary. Hint: you can break down text variable str to words using str.split() function. 
+5.A program which asks the user to enter some text and then goes through the text and prepares a set of words, which appear in the given text.
+'''
 print('Question1:')
 MAX=10
 a=[0]*MAX
