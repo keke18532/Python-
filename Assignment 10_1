@@ -1,0 +1,118 @@
+from tkinter import *
+def drawRectangle():
+    global E1,canvas
+    canvas.pack_forget()
+    shape=E1.get()
+    width=eval(shape.split(',')[0])
+    height=eval(shape.split(',')[1])
+    #print(width)
+    canvas=Canvas(root,height=250, width=300)
+    canvas.create_rectangle(50, 50, width, height)
+    canvas.pack(side=LEFT)
+def drawOval():
+    global E1,canvas
+    canvas.pack_forget()
+    shape=E1.get()
+    width=eval(shape.split(',')[0])
+    height=eval(shape.split(',')[1])
+    canvas=Canvas(root,height=250, width=300)
+    canvas.create_oval(50, 50, width, height)
+    canvas.pack()
+
+
+if __name__ == '__main__':
+    root = Tk()
+    root.wm_title('Drawshape')
+    L1 = Label(root, text="Please enter width,height:")
+    L1.pack(side = LEFT)
+    mylistbox=Listbox(root)
+    E1 = Entry(root, bd =5)
+    E1.pack(side = LEFT)
+    canvas=Canvas(root,height=250, width=300)
+    button1=Button(root, text='Rectangle', command=drawRectangle)
+    button2=Button(root, text='Oval', command=drawOval)
+    button1.pack(side = LEFT)
+    button2.pack(side = LEFT)
+    root.mainloop()
+
+
+'''
+from tkinter import *
+def drawRectangle():
+    global E1,canvas
+    canvas.pack_forget()
+    shape=E1.get()
+    width=eval(shape.split(',')[0])
+    height=eval(shape.split(',')[1])
+    #print(width)
+    canvas=Canvas(root,height=250, width=300)
+    canvas.create_rectangle(50, 50, width, height)
+    canvas.pack(side=LEFT)
+def drawOval():
+    global E1,canvas
+    canvas.pack_forget()
+    shape=E1.get()
+    width=eval(shape.split(',')[0])
+    height=eval(shape.split(',')[1])
+    canvas=Canvas(root,height=250, width=300)
+    canvas.create_oval(50, 50, width, height)
+    canvas.pack()
+
+
+if __name__ == '__main__':
+    root = Tk()
+    root.wm_title('Drawshape')
+    L1 = Label(root, text="Please enter width,height:")
+    L1.pack(side = LEFT)
+    E1 = Entry(root, bd =5)
+    E1.pack(side = LEFT)
+    canvas=Canvas(root,height=250, width=300)
+    button1=Button(root, text='Rectangle', command=drawRectangle)
+    button2=Button(root, text='Oval', command=drawOval)
+    button1.pack(side = LEFT)
+    button2.pack(side = LEFT)
+    root.mainloop()
+'''
+'''
+from tkinter import *
+#from tkinter import messagebox
+#import tkinter
+
+top = Tk()
+mylistbox=Listbox(top)
+itemsforlistbox=['one','two','three','four','five','six','seven']
+def CurSelet(evt):
+    value=str((mylistbox.get(ACTIVE)))
+    #print(value)
+mylistbox.bind('<<ListboxSelect>>',CurSelet)
+for items in itemsforlistbox:
+    mylistbox.insert(END,items)
+
+mylistbox.pack()
+width=mylistbox.get(END)
+print(width)
+top.mainloop()
+'''
+'''
+from tkinter import*
+root=Tk()
+sizex = 600
+sizey = 400
+posx  = 40
+posy  = 20
+root.wm_geometry("%dx%d+%d+%d" % (sizex, sizey, posx, posy))
+itemsforlistbox=['one','two','three','four','five','six','seven']
+
+def CurSelet(evt):
+    value=str((mylistbox.get(ACTIVE)))
+    print(value)
+
+mylistbox=Listbox(root,width=60,height=10,font=('times',13))
+mylistbox.bind('<<ListboxSelect>>',CurSelet)
+mylistbox.place(x=32,y=90)
+
+for items in itemsforlistbox:
+    mylistbox.insert(END,items)
+root.mainloop()
+
+'''
