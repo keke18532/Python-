@@ -1,3 +1,17 @@
+'''
+Instructions
+
+Solve the following problems and submit your solutions before the deadline.
+
+Problems
+
+Writ the following programs in Python language:
+
+A GUI application, which displays a window for reading the width and height of a shape and then draws it. The shape can be either a rectangle or an oval and it should be read from a Listbox widget.
+A GUI application , which changes the background color of the main window as the mouse moves above it.
+A GUI application, which consists of two buttons and the program should work so that when the first button is clicked, the second button should disappear if it is visible and vice versa. The application should also work so that if the mouse is moved above the second button, the first button will be moved up.
+A GUI application, which displays a list of products on a Listbox widget. The application should work so that when a product is double clicked by the left mouse button, the item information will be saved to a file and if the item is double-clicked by the right mouse button twice, it will be removed from the list. 
+'''
 from tkinter import *
 def drawRectangle():
     global E1,canvas
